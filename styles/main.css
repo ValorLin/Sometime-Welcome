@@ -20,46 +20,46 @@
 }
 .clock {
   margin: 0 auto;
-  width: 36px;
-  height: 36px;
+  width: 72px;
+  height: 72px;
   position: relative;
 }
 .clock .body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 36px;
-  height: 36px;
-  border: 2.05714286px solid #2e363a;
+  width: 72px;
+  height: 72px;
+  border: 4px solid #2e363a;
   border-radius: 50%;
-  box-shadow: 0 0 0 2.05714286px #d9e2e6;
+  box-shadow: 0 0 0 4px #d9e2e6;
   background-color: #d9e2e6;
   -webkit-animation: spin 2s infinite ease;
           animation: spin 2s infinite ease;
 }
 .clock .body .hand {
-  height: 13.37142857px;
+  height: 26px;
   position: absolute;
-  top: 3.6px;
-  left: 16.97142857px;
-  border-left: 2.05714286px solid #2e363a;
+  top: 8px;
+  left: 34px;
+  border-left: 4px solid #2e363a;
 }
 .clock .body .hand .axis {
   border-radius: 50%;
-  width: 6.17142857px;
-  height: 6.17142857px;
+  width: 12px;
+  height: 12px;
   background-color: #000;
   position: absolute;
-  bottom: -4.11428571px;
-  left: -4.11428571px;
+  bottom: -8px;
+  left: -8px;
 }
 .clock .bell,
 .clock .bell-small {
   position: absolute;
-  left: 11.31428571px;
-  top: -5.14285714px;
-  width: 8.22857143px;
-  height: 8.22857143px;
+  left: 22px;
+  top: -10px;
+  width: 16px;
+  height: 16px;
   background-color: #2e363a;
   border-radius: 50%;
 }
@@ -67,13 +67,13 @@
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  -webkit-transform-origin: 8.22857143px 28.8px;
-      -ms-transform-origin: 8.22857143px 28.8px;
-          transform-origin: 8.22857143px 28.8px;
-  top: -8.22857143px;
-  left: 14.4px;
-  width: 6.17142857px;
-  height: 6.17142857px;
+  -webkit-transform-origin: 16px 56px;
+      -ms-transform-origin: 16px 56px;
+          transform-origin: 16px 56px;
+  top: -16px;
+  left: 28px;
+  width: 12px;
+  height: 12px;
 }
 h2,
 h3 {
