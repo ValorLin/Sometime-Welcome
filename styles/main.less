@@ -1,0 +1,95 @@
+@strokeWidth: 2px;
+@strokeColor: #2E363A;
+@strokeStyle: 2px solid @strokeColor;
+
+@backgroundColor: #D9E2E6;
+
+@clockSize: 35px;
+@handLength: @clockSize/35*13;
+@axisSize: @clockSize/35*6;
+
+@keyframes spin {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(765deg);
+  }
+}
+
+.clock {
+  margin: 0 auto;
+  width: @clockSize;
+  height: @clockSize;
+  position: relative;
+
+  .body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @clockSize;
+    height: @clockSize;
+    border: @strokeStyle;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px @backgroundColor;
+    background-color: @backgroundColor;
+
+    .hand {
+      height: @handLength;
+      position: absolute;
+      top: @clockSize/2 - @handLength;
+      left: @clockSize/35*16;
+      border-left: @strokeStyle;
+      transform: rotate(45deg);
+      transform-origin: 1px 13px;
+      animation: spin 2s infinite ease;
+
+      .axis {
+        border-radius: 50%;
+        width: @axisSize;
+        height: @axisSize;
+        background-color: #000;
+        position: absolute;
+        bottom: -3px;
+        left: -4px;
+      }
+    }
+  }
+
+  .bell, .bell-small {
+    position: absolute;
+    left: 11px;
+    top: -6px;
+    width: 8px;
+    height: 8px;
+    background-color: @strokeColor;
+    border-radius: 50%;
+  }
+
+  .bell-small {
+    transform: rotate(-45deg);
+    transform-origin: 4px 26px;
+    top: -4px;
+    left: 11px;
+    width: 6px;
+    height: 6px;
+  }
+}
+
+h2, h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+h3 {
+  color: #98A0A4;
+  font-size: 32px;
+  font-family: Arial;
+}
+
+h2 {
+  color: #50585C;
+  font-size: 128px;
+  margin-bottom: 40px;
+}
