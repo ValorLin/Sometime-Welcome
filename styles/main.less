@@ -1,12 +1,14 @@
-@strokeWidth: 2px;
-@strokeColor: #2E363A;
-@strokeStyle: 2px solid @strokeColor;
-
 @backgroundColor: #D9E2E6;
 
-@clockSize: 35px;
-@handLength: @clockSize/35*13;
-@axisSize: @clockSize/35*6;
+@clockSize: 70px;
+@baseSize: @clockSize/35;
+
+@handLength: 13 * @baseSize;
+@axisSize: 6 * @baseSize;
+
+@strokeWidth: 2 * @baseSize;
+@strokeColor: #2E363A;
+@strokeStyle: @strokeWidth solid @strokeColor;
 
 @keyframes spin {
   0% {
@@ -32,18 +34,16 @@
     height: @clockSize;
     border: @strokeStyle;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px @backgroundColor;
+    box-shadow: 0 0 0 @strokeWidth @backgroundColor;
     background-color: @backgroundColor;
+    animation: spin 2s infinite ease;
 
     .hand {
       height: @handLength;
       position: absolute;
-      top: @clockSize/2 - @handLength;
-      left: @clockSize/35*16;
+      top: (@clockSize - @strokeWidth)/2 - @handLength;
+      left: (@clockSize - @strokeWidth)/2;
       border-left: @strokeStyle;
-      transform: rotate(45deg);
-      transform-origin: 1px 13px;
-      animation: spin 2s infinite ease;
 
       .axis {
         border-radius: 50%;
@@ -51,29 +51,29 @@
         height: @axisSize;
         background-color: #000;
         position: absolute;
-        bottom: -3px;
-        left: -4px;
+        bottom: -(@axisSize + @strokeWidth)/2;
+        left: -(@axisSize + @strokeWidth)/2;
       }
     }
   }
 
   .bell, .bell-small {
     position: absolute;
-    left: 11px;
-    top: -6px;
-    width: 8px;
-    height: 8px;
+    left: 11 * @baseSize;
+    top: -5 * @baseSize;
+    width: 8 * @baseSize;
+    height: 8 * @baseSize;
     background-color: @strokeColor;
     border-radius: 50%;
   }
 
   .bell-small {
     transform: rotate(-45deg);
-    transform-origin: 4px 26px;
-    top: -4px;
-    left: 11px;
-    width: 6px;
-    height: 6px;
+    transform-origin: 8 * @baseSize 28 * @baseSize;
+    top: -8 * @baseSize;
+    left: 14 * @baseSize;
+    width: 6 * @baseSize;
+    height: 6 * @baseSize;
   }
 }
 
